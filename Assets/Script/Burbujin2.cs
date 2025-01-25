@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class Burbujin : MonoBehaviour
+public class Burbujin2 : MonoBehaviour
 {
 
     private Vector2 mov;
@@ -21,14 +21,14 @@ public class Burbujin : MonoBehaviour
         private void Rotation()
     {
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("Apretando d");
+            Debug.Log("Apretando Right");
             transform.Rotate(0, 0, RotationMoveLeft * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            Debug.Log("Apretando a");
+            Debug.Log("Apretando Left");
             transform.Rotate(0, 0, RotationMoveRight * Time.deltaTime);
         }
 

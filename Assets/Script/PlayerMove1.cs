@@ -40,7 +40,7 @@ public class PlayerMove1 : MonoBehaviour
         mov.y = Input.GetAxisRaw("Vertical1") * speed;
         rb.linearVelocity = new Vector2(mov.x, mov.y);
 
-        anim.SetFloat("Horizontal1", mov.x); // control de animacion cuando mueve eje x
+        anim.SetBool("Walk", mov.x != 0); // control de animacion cuando mueve eje x y ve si no es 0 se cambia
 
         if (mov.x != 0) // Si el jugador se mueve en el eje horizontal
         {
