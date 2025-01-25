@@ -10,12 +10,19 @@ public class PlayerMove1 : MonoBehaviour
     private Vector2 mov;
     public bool canMove = true;
 
+    private Animator anim;
+    private SpriteRenderer spritePerso;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); //revisar
+        spritePerso = GetComponentInChildren<SpriteRenderer>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Update is called once per frame
@@ -32,5 +39,14 @@ public class PlayerMove1 : MonoBehaviour
         mov.x = Input.GetAxisRaw("Horizontal1") * speed;
         mov.y = Input.GetAxisRaw("Vertical1") * speed;
         rb.linearVelocity = new Vector2(mov.x, mov.y);
+
+        anim.SetFloat("Horizontal1", mov.x); // control de animacion cuando mueve eje x
+
+        if (mov.x != 0) // Si el jugador se mueve en el eje horizontal
+        {
+            spritePerso.flipX = mov.x < 0; // Si se mueve a la izquierda, se voltea (flipX)
+        }
+
+
     }
 }
