@@ -31,6 +31,9 @@ public class PlayerMove2 : MonoBehaviour
         spritePerso = GetComponentInChildren<SpriteRenderer>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         spriteRenderer = hijo.GetComponent<SpriteRenderer>();
+
+
+
     }
 
     // Update is called once per frame
