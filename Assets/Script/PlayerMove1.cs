@@ -62,6 +62,7 @@ public class PlayerMove1 : MonoBehaviour
         }
         if (Stair.CompareTag("tubo"))
         {
+            anim.SetBool("Right", false);
             anim.SetBool("Up", true);
             spriteRenderer.enabled = false;
             Debug.Log("SpriteRenderer desactivado.");
@@ -69,11 +70,19 @@ public class PlayerMove1 : MonoBehaviour
         }
         if (Stair.CompareTag("tuboRect"))
         {
+            anim.SetBool("Up", false);
+            spriteRenderer.enabled = false;
+            Debug.Log("SpriteRenderer desactivado.");
+        }
+        /*if (Stair.CompareTag("tuboRect")) ESTO SIRVE PARA VISTA TOP DOWN DE COSTADO no necesario ahora al final
+        {
+            anim.SetBool("Up", false);
             anim.SetBool("Right", true);
             spriteRenderer.enabled = false;
             Debug.Log("SpriteRenderer desactivado.");
 
         }
+        */
 
     }
     private void OnTriggerExit2D(Collider2D other)

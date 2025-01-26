@@ -16,6 +16,11 @@ public class PlayerMove2 : MonoBehaviour
     // Variable para recordar la última dirección de movimiento
     private bool lastMoveLeft = false;
 
+    public GameObject hijo;
+    private SpriteRenderer spriteRenderer;
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +30,7 @@ public class PlayerMove2 : MonoBehaviour
         anim = GetComponent<Animator>(); //revisar
         spritePerso = GetComponentInChildren<SpriteRenderer>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        spriteRenderer = hijo.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -87,14 +93,31 @@ public class PlayerMove2 : MonoBehaviour
         {
             anim.SetBool("Up", true);
         }
- 
+        if (Stair.CompareTag("tubo"))
+        {
+            anim.SetBool("Right", false);
+            anim.SetBool("Up", true);
+            spriteRenderer.enabled = false;
+            Debug.Log("SpriteRenderer desactivado.");
+
+        }
+        if (Stair.CompareTag("tuboRect"))
+        {
+            anim.SetBool("Up", false);
+            spriteRenderer.enabled = false;
+            Debug.Log("SpriteRenderer desactivado.");
+        }
+
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("salio");
         anim.SetBool("Up", false);
+        spriteRenderer.enabled = true;
+        Debug.Log("SpriteRenderer activado.");
     }
 }
+
 
 
 
