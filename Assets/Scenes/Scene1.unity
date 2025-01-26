@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 1494950999}
   - component: {fileID: 1494950998}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Squaree
   m_TagString: Subir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   canMove: 1
-  hijo: {fileID: 0}
+  hijo: {fileID: 1777619450}
 --- !u!70 &1618924727
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
