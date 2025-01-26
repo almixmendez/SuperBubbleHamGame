@@ -13,6 +13,8 @@ public class PlayerMove1 : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spritePerso;
 
+    public GameObject hijo;
+    private MeshRenderer meshRenderer;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,6 +25,8 @@ public class PlayerMove1 : MonoBehaviour
         anim = GetComponent<Animator>(); //revisar
         spritePerso = GetComponentInChildren<SpriteRenderer>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        meshRenderer = hijo.GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -56,11 +60,18 @@ public class PlayerMove1 : MonoBehaviour
         {
             anim.SetBool("Up", true);
         }
+        if (Stair.CompareTag("tubo"))
+        {
+            anim.SetBool("Up", true);
+            meshRenderer.enabled = false;
+
+        }
 
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("salio");
         anim.SetBool("Up", false);
+        meshRenderer.enabled = true;
     }
 }
