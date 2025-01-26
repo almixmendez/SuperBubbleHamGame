@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 public class PlayerMove2 : MonoBehaviour
@@ -12,7 +13,8 @@ public class PlayerMove2 : MonoBehaviour
 
     private Animator anim;
     private SpriteRenderer spritePerso;
-
+    // Variable para recordar la última dirección de movimiento
+    private bool lastMoveLeft = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,26 +47,58 @@ public class PlayerMove2 : MonoBehaviour
         {
             anim.SetBool("Walk", false);
             anim.SetBool("WalkBack", false);
+
+            if (lastMoveLeft)
+            {
+               anim.SetBool("Left", true);
+               anim.SetBool("HamsterStop", false);
+            }
+            else
+            {
+                anim.SetBool("HamsterStop", true); // Si no fue hacia la izquierda, ponemos el estado quieto normal
+                anim.SetBool("HamsterStopLeft", false);
+            }
         }
+
 
         if (mov.x != 0) // Si el jugador se mueve en el eje horizontal
         {
-            if (mov.x > 0)
-            {
+           if (mov.x > 0)
+           {
                 anim.SetBool("Walk", true);
-                anim.SetBool("WalkBack", false);  // Desactiva la animación de caminar hacia atrás
-            }
-            if (mov.x < 0)
-            {
+                anim.SetBool("WalkBack", false);  // Desactiva la animación de caminar hacia atrás}}
+                anim.SetBool("Left", false);  // Activa la animación de quieto mirando hacia la izquierda
+                lastMoveLeft = false; // Recordamos que el último movimiento no fue hacia la izquierda
+           }
+           if (mov.x < 0)
+           {
                 Debug.Log("entro");
                 anim.SetBool("WalkBack", true);
                 anim.SetBool("Walk", false); // Desactiva la animación de caminar hacia adelante
-            }
-
+                anim.SetBool("Left", true);  // Activa la animación de quieto mirando hacia la izquierda
+                lastMoveLeft = true; // Recordamos que el último movimiento fue hacia la izquierda
+           }
         }
-
-
+    }
+    private void OnTriggerStay2D(Collider2D Stair)
+    {
+        Debug.Log("Adentro");
+        if (Stair.CompareTag("Subir"))
+        {
+            anim.SetBool("Up", true);
+        }
+ 
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("salio");
+        anim.SetBool("Up", false);
     }
 }
+
+
+
+    
+
 
 

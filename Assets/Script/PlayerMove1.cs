@@ -49,4 +49,18 @@ public class PlayerMove1 : MonoBehaviour
 
 
     }
+    private void OnTriggerStay2D(Collider2D Stair)
+    {
+        Debug.Log("Adentro");
+        if (Stair.CompareTag("Subir"))
+        {
+            anim.SetBool("Up", true);
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("salio");
+        anim.SetBool("Up", false);
+    }
 }
