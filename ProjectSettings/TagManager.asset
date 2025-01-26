@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Subir
   - tubo
+  - tuboRect
   layers:
   - Default
   - TransparentFX

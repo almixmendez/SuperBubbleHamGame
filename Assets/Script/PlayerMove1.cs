@@ -14,7 +14,7 @@ public class PlayerMove1 : MonoBehaviour
     private SpriteRenderer spritePerso;
 
     public GameObject hijo;
-    private MeshRenderer meshRenderer;
+    private SpriteRenderer spriteRenderer;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,7 +26,7 @@ public class PlayerMove1 : MonoBehaviour
         spritePerso = GetComponentInChildren<SpriteRenderer>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        meshRenderer = hijo.GetComponent<MeshRenderer>();
+        spriteRenderer = hijo.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -63,7 +63,15 @@ public class PlayerMove1 : MonoBehaviour
         if (Stair.CompareTag("tubo"))
         {
             anim.SetBool("Up", true);
-            meshRenderer.enabled = false;
+            spriteRenderer.enabled = false;
+            Debug.Log("SpriteRenderer desactivado.");
+
+        }
+        if (Stair.CompareTag("tuboRect"))
+        {
+            anim.SetBool("Right", true);
+            spriteRenderer.enabled = false;
+            Debug.Log("SpriteRenderer desactivado.");
 
         }
 
@@ -72,6 +80,7 @@ public class PlayerMove1 : MonoBehaviour
     {
         Debug.Log("salio");
         anim.SetBool("Up", false);
-        meshRenderer.enabled = true;
+        spriteRenderer.enabled = true;
+        Debug.Log("SpriteRenderer activado.");
     }
 }
