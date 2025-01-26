@@ -7,6 +7,9 @@ TagManager:
   - Subir
   - tubo
   - tuboRect
+  - ChangeScene
+  - Player2
+  - ChangeScene2
   layers:
   - Default
   - TransparentFX
