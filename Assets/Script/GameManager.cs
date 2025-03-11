@@ -5,7 +5,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour 
+{
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("ChangeScene"))
@@ -18,4 +19,9 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene("Continue");
         }
     }
+    public void playerChange()
+    {
+        SceneManager.LoadScene("Scene1");
+    }
+    
 }

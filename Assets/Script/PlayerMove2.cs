@@ -60,12 +60,12 @@ public class PlayerMove2 : MonoBehaviour
             if (lastMoveLeft)
             {
                anim.SetBool("Left", true);
-               anim.SetBool("HamsterStop", false);
+               //anim.SetBool("Hamster2Stop", false); error dejo por las dudas pero esta mal.
             }
             else
             {
-                anim.SetBool("HamsterStop", true); // Si no fue hacia la izquierda, ponemos el estado quieto normal
-                anim.SetBool("HamsterStopLeft", false);
+                //anim.SetBool("Hamster2Stop", true); // error. Si no fue hacia la izquierda, ponemos el estado quieto normal
+                anim.SetBool("Left", false);
             }
         }
 
@@ -119,8 +119,9 @@ public class PlayerMove2 : MonoBehaviour
         spriteRenderer.enabled = true;
         Debug.Log("SpriteRenderer activado.");
     }
-}
 
+
+}
 
 
 

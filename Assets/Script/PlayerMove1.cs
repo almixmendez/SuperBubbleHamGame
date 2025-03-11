@@ -40,8 +40,8 @@ public class PlayerMove1 : MonoBehaviour
     private void Move()
     {
 
-        mov.x = Input.GetAxisRaw("Horizontal1") * speed;
-        mov.y = Input.GetAxisRaw("Vertical1") * speed;
+        mov.x = SimpleInput.GetAxisRaw("Horizontal1") * speed;
+        mov.y = SimpleInput.GetAxisRaw("Vertical1") * speed;
         rb.linearVelocity = new Vector2(mov.x, mov.y);
 
         anim.SetBool("Walk", mov.x != 0); // control de animacion cuando mueve eje x y ve si no es 0 se cambia
