@@ -24,6 +24,7 @@ namespace Photon.Realtime
 
     #if SUPPORTED_UNITY
     using UnityEngine;
+    using UnityEngine.SceneManagement;
     using Debug = UnityEngine.Debug;
     #endif
     #if SUPPORTED_UNITY || NETFX_CORE
@@ -3908,7 +3909,7 @@ namespace Photon.Realtime
         /// </remarks>
         /// <param name="debugMessage">Contains a debug message why authentication failed. This has to be fixed during development.</param>
         void OnCustomAuthenticationFailed(string debugMessage);
-
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode);
     }
 
 
