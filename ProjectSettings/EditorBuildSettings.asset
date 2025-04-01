@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JoinParty.unity
+    path: Assets/Scenes/Old Game Pc (break)/JoinParty.unity
     guid: ce16feaa9324d4541be45c9005af936b
   - enabled: 1
     path: Assets/Scenes/Menu.unity
@@ -15,11 +15,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene1.unity
     guid: 30d7a2fb470e2a7488080c061e756221
   - enabled: 1
-    path: Assets/Scenes/SceneHarry.unity
+    path: Assets/Scenes/Old Game Pc (break)/SceneHarry.unity
     guid: 7c82829535fd8184493d3cf928ce70ad
   - enabled: 1
-    path: Assets/Scenes/SceneHenry.unity
+    path: Assets/Scenes/Old Game Pc (break)/SceneHenry.unity
     guid: 0456350ea0556d14f9d2b8194ca26d5a
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: 5e297515308ccc84d9f73c6cd0ab0541
+  - enabled: 1
+    path: Assets/Scenes/Scene2old.unity
+    guid: c5039f7afd57b9a4884700e6587a24bd
+  - enabled: 1
+    path: Assets/Scenes/Scene3old.unity
+    guid: 1e416d4fdc66c31478c214a4fd4d9de7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
