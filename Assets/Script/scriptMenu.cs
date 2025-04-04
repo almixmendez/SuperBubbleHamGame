@@ -8,7 +8,7 @@ public class scriptMenu : MonoBehaviour
 {
     public void PlayAgain()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("Test");
     }
     public void SecretLevel()
     {

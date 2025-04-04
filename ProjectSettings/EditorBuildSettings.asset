@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Old Game Pc (break)/JoinParty.unity
-    guid: ce16feaa9324d4541be45c9005af936b
-  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Old Game Pc (break)/JoinParty.unity
+    guid: ce16feaa9324d4541be45c9005af936b
   - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: 30d7a2fb470e2a7488080c061e756221
