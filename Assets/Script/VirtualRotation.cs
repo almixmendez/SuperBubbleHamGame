@@ -4,42 +4,43 @@ public class VirtualRotation : MonoBehaviour
 {
     public TubesData data;
 
+    //public void RotateAndUpdate(int id)
+    //{
+    //    VirtuallyRotateByID(id);
+
+    //    // Actualizar los objetos visibles en escena
+    //    TubeController[] tubes = FindObjectsOfType<TubeController>();
+    //    foreach (var tube in tubes)
+    //    {
+    //        if (tube.id == id)
+    //            tube.ApplyRotationFromData();
+    //    }
+    //}
+
     public void VirtuallyRotateByID(int id)
     {
-        if (data != null)
+        if (data == null) return;
+
+        TubeInfo tube = data.GetTubeInfoById(id);
+        if (tube != null)
         {
-            TubeInfo targetTube = System.Array.Find(data.tubes, t => t.id == id);
+            tube.rotation += 90f;
+            if (tube.rotation >= 360f)
+                tube.rotation = 0f;
 
-            if (targetTube != null)
-            {
-                targetTube.rotation += 90f;
-                if (targetTube.rotation >= 360f)
-                    targetTube.rotation = 0f;
-
-                Debug.Log($" Botón presionado - Tubo ID: {id} - Nueva rotación: {targetTube.rotation}");
-            }
-            else
-            {
-                Debug.LogWarning($" No se encontró un tubo con ID {id} en el TubesData.");
-            }
+            Debug.Log($"Botón presionado - Tubo ID: {id} - Nueva rotación: {tube.rotation}");
         }
-        //        if (data != null && id < data.tubes.Length)
-        //        {
-        //            data.tubes[id].rotation += 90f;
-        //            if (data.tubes[id].rotation >= 360f)
-        //                data.tubes[id].rotation = 0f;
+        //if (data != null)
+        //{
+        //    TubeInfo tube = System.Array.Find(data.tubes, t => t.id == id);
+        //    if (tube != null)
+        //    {
+        //        tube.rotation += 90f;
+        //        if (tube.rotation >= 360f)
+        //            tube.rotation = 0f;
 
-        //            #if UNITY_EDITOR
-        //            UnityEditor.EditorUtility.SetDirty(data);
-        //            UnityEditor.AssetDatabase.SaveAssets();
-        //#endif
-
-        //            Debug.Log("Tubo " + id + " rotado virtualmente a: " + data.tubes[id].rotation);
-        //            Debug.Log($" Botón presionado - Tubo ID: {id} - Nueva rotación: {data.tubes[id].rotation}");
-        //        }
-        //        else
-        //        {
-        //            Debug.LogWarning($" No se pudo rotar tubo con ID {id}. Verifica si el array está inicializado correctamente.");
-        //        }
+        //        Debug.Log($"[VirtualRotation] Tubo {id} virtualmente rotado a {tube.rotation}");
+        //    }
+        //}
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 public class TubesData : ScriptableObject
 {
     public TubeInfo[] tubes;
-    public TubeInfo[] tubess;
 
     public TubeInfo GetTubeInfoById(int id)
     {
