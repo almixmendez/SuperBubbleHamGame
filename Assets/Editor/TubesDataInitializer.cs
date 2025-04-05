@@ -11,12 +11,11 @@ public class TubesDataInitializer
 
         // Inicializar 4 tubos
         asset.tubes = new TubeInfo[4];
-        for (int i = 0; i < 4; i++)
-        {
-            asset.tubes[i] = new TubeInfo();
-            asset.tubes[i].id = i;
-            asset.tubes[i].rotation = 0f;
-        }
+
+        asset.tubes[0] = new TubeInfo { id = 3, rotation = 0f };
+        asset.tubes[1] = new TubeInfo { id = 4, rotation = 0f };
+        asset.tubes[2] = new TubeInfo { id = 8, rotation = 0f };
+        asset.tubes[3] = new TubeInfo { id = 12, rotation = 0f };
 
         // Guardar como archivo
         string path = "Assets/TubesData.asset";

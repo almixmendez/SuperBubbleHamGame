@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tubes:
   - id: 3
-    rotation: 270
+    rotation: 0
   - id: 4
-    rotation: 180
+    rotation: 0
   - id: 8
-    rotation: 180
+    rotation: 0
   - id: 12
     rotation: 0
   tubess: []
