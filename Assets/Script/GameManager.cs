@@ -23,5 +23,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Scene1");
     }
-    
+
+    public void playerChange2()
+    {
+        Debug.Log("Cambiando a escena Tubes...");
+        SceneManager.LoadScene("Tubes");
+    }
+
+    public void playerChange3()
+    {
+        Debug.Log("Cambiando a escena TubesManager...");
+        SceneManager.LoadScene("TubesManager");
+    }
 }
